@@ -6,6 +6,8 @@
   <title>Payoff.lol – Debt vs Crypto</title>
   <link rel="stylesheet" href="style.css" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  
 </head>
 <body>
   <main class="wrapper">
@@ -24,7 +26,7 @@
     </section>
 
     <section class="card">
-      <h2>Degen Scenario</h2>
+      <h2>Token Info</h2>
                   <label>Choose token:
         <div class="dropdown">
           <input type="text" id="tokenSearch" placeholder="Paste token address or search..." oninput="filterTokens()" onblur="hideDropdown()" onfocus="showDropdown()"/>
@@ -57,13 +59,62 @@
   </main>
 
   <div class="disclaimer">
+
+    <div class="card">
+        <h2>Tip Jar</h2>
+        <p>If this site helped you think differently, feel free to send a little thank you:</p>
+        <ul>
+            <li>
+              <b>Solana:</b>
+              <code id="sol-addr">6Lvmf9nyoWH4FNcTfpe35NKd92k5hjLUpzvwpGXgYhkq</code>
+              <button class="copy-btn" data-copy-id="sol-addr" onclick="copy(this)">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="#0ff" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M16 1H4a2 2 0 0 0-2 2v14h2V3h12V1zm3 4H8a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 18H8V7h11v16z"/>
+                </svg>
+              </button>
+            </li>
+          
+            <li>
+              <b>Ethereum:</b>
+              <code id="eth-addr">0xf0D5A58dc8cc5F8d3621d167c3E5D297d5F8DAd3</code>
+              <button class="copy-btn" data-copy-id="eth-addr" onclick="copy(this)">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="#0ff" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M16 1H4a2 2 0 0 0-2 2v14h2V3h12V1zm3 4H8a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 18H8V7h11v16z"/>
+                </svg>
+              </button>
+            </li>
+          
+            <li>
+              <b>Bitcoin:</b>
+              <code id="btc-addr">bc1qf8mfwl5pkxjvmx29cuz4t4h6sfrmzjzetafn8j</code>
+              <button class="copy-btn" data-copy-id="btc-addr" onclick="copy(this)">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="#0ff" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M16 1H4a2 2 0 0 0-2 2v14h2V3h12V1zm3 4H8a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 18H8V7h11v16z"/>
+                </svg>
+              </button>
+            </li>
+          </ul>
+          
+      </div>
     <p><b>Disclaimer:</b> This tool is for entertainment and educational purposes only. It is <i>not</i> financial advice.</p>
     <p>We do not recommend making life-altering decisions based on cartoon simulations of debt and degen bag-holding.</p>
     <p>If your entire financial plan hinges on $BONK reaching $69, reconsider your choices.</p>
     <p>Debt is real. So are margin calls. This app? Not so much.</p>
+
+      
+      <script>
+        function copy(id) {
+          const el = document.getElementById(id);
+          navigator.clipboard.writeText(el.textContent.trim()).then(() => {
+            alert("Address copied to clipboard!");
+          });
+        }
+      </script>
+      
   </div>
   
 
   <script src="script.js" defer></script>
+
 </body>
 </html>
