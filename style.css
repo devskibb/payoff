@@ -1,0 +1,239 @@
+/* ------------- Payoff.lol styles ------------- */
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+    background-color: #0a0a0a;
+    color: #f0f0f0;
+    line-height: 1.5;
+  }
+  
+  .wrapper {
+    max-width: 720px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.25rem;
+    text-align: center;
+    color: #0ff;
+    text-shadow: 0 0 6px #0ff;
+  }
+  
+  .tagline {
+    font-size: 1.1rem;
+    color: #888;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .card {
+    background-color: #111;
+    border: 1px solid #222;
+    box-shadow: 0 4px 12px rgba(0,255,255,0.1);
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    transition: transform .15s ease;
+  }
+  .card:hover {
+    transform: translateY(-4px);
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+  label input[type="checkbox"] {
+    margin-left: 0;
+    margin-right: 0.5rem;
+    transform: scale(1.1);
+  }
+  
+  input[type="text"],
+  input[type="number"],
+  input[type="date"] {
+    margin-left: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    color: #eee;
+    border-radius: 6px;
+    font-size: 1rem;
+    width: calc(100% - 1.5rem);
+    box-sizing: border-box;
+    transition: border-color .2s ease, box-shadow .2s ease;
+  }
+  input:focus {
+    border-color: #0ff;
+    box-shadow: 0 0 4px rgba(0,255,255,0.4);
+    outline: none;
+  }
+  
+  button {
+    display: inline-block;
+    background: linear-gradient(135deg, #0ff, #08c);
+    color: #000;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    text-transform: uppercase;
+    box-shadow: 0 4px 8px rgba(0,255,255,0.2);
+    transition: background .2s ease, transform .1s ease;
+  }
+  button:hover {
+    background: linear-gradient(135deg, #0ee, #0aa);
+    transform: translateY(-2px);
+  }
+  button:active {
+    transform: translateY(0);
+  }
+  
+  .results {
+    margin-top: 2rem;
+    font-size: 1.1rem;
+  }
+  .summary-block {
+    background: #1a1a1a;
+    border-left: 4px solid #0ff;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+  }
+  
+  h3 {
+    display: flex;
+    align-items: center;
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
+  }
+  h3::before {
+    content: "📊";
+    margin-right: 0.5rem;
+  }
+  
+  .tooltip {
+    position: relative;
+    cursor: help;
+    display: inline-block;
+    margin-left: 0.25rem;
+    color: #0ff;
+  }
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 260px;
+    background-color: #222;
+    color: #fff;
+    text-align: left;
+    border-radius: 6px;
+    padding: 0.5rem;
+    position: absolute;
+    z-index: 10;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity .2s ease-in-out;
+    font-size: 0.85rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+  }
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .dropdown {
+    position: relative;
+    width: 100%;
+  }
+  .dropdown input {
+    width: 100%;
+  }
+  .dropdown-list {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    width: 100%;
+    max-height: 180px;
+    overflow-y: auto;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 4px;
+    z-index: 20;
+    display: none;
+  }
+  .dropdown-list li {
+    padding: 0.5rem 0.75rem;
+    cursor: pointer;
+    transition: background .1s ease;
+  }
+  .dropdown-list li:hover {
+    background: #222;
+  }
+  
+  canvas {
+    margin-top: 2rem;
+    border-radius: 8px;
+    background: #111;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  }
+  
+  /* Remove number input arrows */
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  /* Firefox */
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+  
+  /* in your CSS */
+.chart-container {
+    position: relative;
+    width: 100%;
+    height: 400px;  /* a fixed, tall enough height */
+}
+  .chart-container canvas {
+    /* let Chart.js resize within this box */
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .disclaimer {
+    text-align: center;
+    opacity: 0.4;
+    font-size: 0.9rem;
+    margin-top: 3rem;
+    font-style: italic;
+    color: #bbb;
+  }
+  
+  a {
+    color: #0ff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s ease;
+  }
+  a:hover {
+    color: #0ee;
+    text-shadow: 0 0 6px #0ff;
+  }
+  
+  .nav-link {
+    display: block;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 0.95rem;
+    opacity: 0.7;
+  }
+  
+  
