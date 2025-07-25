@@ -11,6 +11,33 @@ const tokenList   = document.getElementById("tokenList");
 window.addEventListener("DOMContentLoaded", fetchTopTokens);
 tokenSearch.addEventListener("input", filterTokens);
 
+function copy(buttonEl) {
+    const id = buttonEl.getAttribute("data-copy-id");
+    const text = document.getElementById(id).textContent.trim();
+    navigator.clipboard.writeText(text);
+  
+    const tooltip = document.createElement("div");
+    tooltip.className = "copy-tooltip";
+    tooltip.innerText = "Copied!";
+  
+    const rect = buttonEl.getBoundingClientRect();
+    tooltip.style.left = rect.left + window.scrollX + "px";
+    tooltip.style.top = rect.top + window.scrollY - 30 + "px";
+  
+    document.body.appendChild(tooltip);
+    requestAnimationFrame(() => {
+      tooltip.style.opacity = 1;
+      tooltip.style.transform = "translateY(-12px)";
+    });
+  
+    setTimeout(() => {
+      tooltip.style.opacity = 0;
+      tooltip.style.transform = "translateY(-16px)";
+      setTimeout(() => tooltip.remove(), 400);
+    }, 1000);
+  }
+  
+
 async function fetchTopTokens() {
   try {
     const res = await fetch(
